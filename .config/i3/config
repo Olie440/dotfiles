@@ -1,0 +1,106 @@
+#
+#####################################################################
+#                                                                   #
+#   Bar                                                             #
+#                                                                   #
+#####################################################################
+#
+bar {
+        status_command i3status
+        tray_output primary
+}
+#
+#####################################################################
+#                                                                   #
+#   Displays and background                                         #
+#                                                                   #
+#####################################################################
+#
+#           <startup-id>        <command>
+#
+exec_always --no-startup-id     xrandr --output DisplayPort-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-0 --off --output DVI-0 --off --output HDMI-0 --off
+exec_always                     workspace 1
+exec_always --no-startup-id     hsetroot -solid "#AAAAAA"
+exec_always --no-startup-id     feh --bg-fill ~/Pictures/P1F15JI.jpg
+#
+#####################################################################
+#                                                                   #
+#   Borders and fonts                                               #
+#                                                                   #
+#####################################################################
+#
+#                               <value>
+#
+default_border                  pixel 2
+default_floating_border         pixel 4
+hide_edge_borders               both
+font pango:                     Sans 12
+#
+#####################################################################
+#                                                                   #
+# Theme                                                             #
+#                                                                   #
+#####################################################################
+#
+#                       border  backgr. text    indicator
+#
+client.focused          #0D0D0D #666666 #ffffff #dddddd
+client.focused_inactive #000000 #666666 #888888 #292d2e
+client.unfocused        #0D0D0D #666666 #888888 #292d2e
+client.urgent           #2f343a #666666 #ffffff #900000
+client.background               #AAAAAA
+#
+#####################################################################
+#                                                                   #
+#   Keybindings                                                     #
+#                                                                   #
+#####################################################################
+#
+#       <keys>              <command>
+#
+bindsym $mod+q              kill
+bindsym $mod+Return         exec $open_app
+
+bindsym $mod+s              split h; exec rofi -modi drun -show drun;
+bindsym $mod+Shift+s        split v; exec rofi -modi drun -show drun;
+
+bindsym $mod+Shift+Left     move left
+bindsym $mod+Shift+Down     move down
+bindsym $mod+Shift+Up       move up
+bindsym $mod+Shift+Right    move right
+
+bindsym $mod+Shift+Return   fullscreen toggle
+bindsym $mod+Left           workspace prev
+bindsym $mod+Right          workspace next
+
+bindsym $mod+r              exec ~/.xsessionrc; reload
+bindsym $mod+Shift+r        exec ~/.xsessionrc; restart
+bindsym $mod+Shift+q        exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym Print               exec gnome-screenshot -i -d 1
+bindsym $mod+p              exec --no-startup-id node ./scripts/switch-displays.js
+
+bindsym $mod+Shift+i        exec xprop -id `xdotool getactivewindow` > ~/.xprop
+#
+#####################################################################
+#                                                                   #
+#   Startup commands                                                #
+#                                                                   #
+#####################################################################
+#
+#           <startup-id>        <command>
+#
+exec_always                     pulseaudio
+exec_always --no-startup-id     compton --config ~/.config/compton/compton.config
+exec_always --no-startup-id     /opt/urserver/urserver-start --no-manager --no-notification
+exec_always --no-startup-id     "rofi -modi drun -show drun -run-command 'i3-msg workspace {cmd}; exec {cmd}'"
+#
+#####################################################################
+#                                                                   #
+#   Variables                                                       #
+#                                                                   #
+#####################################################################
+#
+set $open_app "rofi -modi drun -show drun -run-command 'i3-msg workspace {cmd}; exec {cmd}'"
+set $mod Mod4
+floating_modifier $mod
