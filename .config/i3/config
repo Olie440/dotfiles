@@ -61,8 +61,8 @@ client.background               #AAAAAA
 bindsym $mod+q              kill
 bindsym $mod+Return         exec $open_app
 
-bindsym $mod+s              split h; exec rofi -modi drun -show drun;
-bindsym $mod+Shift+s        split v; exec rofi -modi drun -show drun;
+bindsym $mod+s              split h; exec $open_app_split;
+bindsym $mod+Shift+s        split v; exec $open_app_split;
 
 bindsym $mod+Shift+Left     move left
 bindsym $mod+Shift+Down     move down
@@ -93,7 +93,7 @@ bindsym $mod+Shift+i        exec xprop -id `xdotool getactivewindow` > ~/.xprop
 exec_always                     pulseaudio
 exec_always --no-startup-id     compton --config ~/.config/compton/compton.config
 exec_always --no-startup-id     /opt/urserver/urserver-start --no-manager --no-notification
-exec_always --no-startup-id     "rofi -modi drun -show drun -run-command 'i3-msg workspace {cmd}; exec {cmd}'"
+exec_always --no-startup-id     $open_app
 #
 #####################################################################
 #                                                                   #
@@ -101,6 +101,7 @@ exec_always --no-startup-id     "rofi -modi drun -show drun -run-command 'i3-msg
 #                                                                   #
 #####################################################################
 #
-set $open_app "rofi -modi drun -show drun -run-command 'i3-msg workspace {cmd}; exec {cmd}'"
+set $open_app "rofi -theme .config/rofi/theme.rasi -show drun -lines 9 -run-command 'i3-msg workspace {cmd}; exec {cmd}'"
+set $open_app_split "rofi -theme .config/rofi/theme.rasi -show drun -lines 9"
 set $mod Mod4
 floating_modifier $mod
