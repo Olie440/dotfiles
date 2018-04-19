@@ -19,9 +19,9 @@ bar {
 #           <startup-id>        <command>
 #
 exec_always --no-startup-id     xrandr --output DisplayPort-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-0 --off --output DVI-0 --off --output HDMI-0 --off
-exec_always                     workspace 1
+exec_always                     i3-msg workspace "New Window"
 exec_always --no-startup-id     hsetroot -solid "#AAAAAA"
-exec_always --no-startup-id     feh --bg-fill ~/Pictures/P1F15JI.jpg
+exec_always --no-startup-id     feh --bg-fill ~/.config/wallpapers/japan-park.jpg
 #
 #####################################################################
 #                                                                   #
