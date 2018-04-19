@@ -5,17 +5,7 @@
 	],
 	"installed_packages":
 	[
-		"AngularJS",
-		"Babel",
-		"Elixir",
-		"ElixirSublime",
-		"Gitignore",
-		"Handlebars",
-		"i3 wm",
-		"JSON Reindent",
-		"Markdown Preview",
 		"Package Control",
-		"ReactJS",
 		"Theme - Afterglow"
 	]
 }

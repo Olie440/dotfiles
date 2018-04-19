@@ -1,7 +1,6 @@
 {
 	"color_scheme": "Packages/Theme - Afterglow/Afterglow-markdown.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
-	"font_face": "Osaka Mono",
 	"font_size": 12,
 	"ignored_packages":
 	[
