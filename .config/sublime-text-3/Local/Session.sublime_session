@@ -1,0 +1,535 @@
+{
+	"folder_history":
+	[
+	],
+	"last_version": 3143,
+	"last_window_id": 5,
+	"log_indexing": false,
+	"settings":
+	{
+		"new_window_height": 1061.0,
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 401.0,
+				"last_filter": "pref",
+				"selected_items":
+				[
+					[
+						"pref",
+						"Preferences: Settings"
+					],
+					[
+						"insta",
+						"Package Control: Install Package"
+					],
+					[
+						"pack",
+						"Install Package Control"
+					]
+				],
+				"width": 501.0
+			},
+			"console":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/etc/fonts/local.conf",
+				"/etc/environment",
+				"/home/olie/config",
+				"/etc/systemd/system/kbdrate.service",
+				"/etc/vconsole.conf"
+			],
+			"find":
+			{
+				"height": 0.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 0.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"menu_visible": false,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"replace":
+			{
+				"height": 0.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			}
+		},
+		"new_window_width": 1920.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"buffers":
+			[
+				{
+					"settings":
+					{
+						"buffer_size": 0,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"contents": "fading = true;\nfade-delta = 4\nfade-in-step = 0.04;\nfade-out-step = 0.005;\nfade-exclude = [\n    \"I3_FLOATING_WINDOW@:c\",\n    \"name = 'rofi'\",\n    \"! name~=''\",\n    \"name = 'Firefox'\"\n]\n\nbackend = \"xr_glx_hybrid\";\n\nno-fading-openclose = false\nglx-no-stencil = true\n\nwintypes:\n{ \n  tooltip = { fade = false; };\n  menu = { fade = false; };\n  dropdown_menu = { fade = false; };\n  popup_menu =  { fade = false; };\n};\n\n\nrefresh-rate = 60;\nvsync = \"opengl-swc\"\n",
+					"file": "/home/olie/.config/compton/compton.config",
+					"file_size": 452,
+					"file_write_time": 131682813892174722,
+					"settings":
+					{
+						"buffer_size": 453,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"contents": "const { execSync } = require('child_process');\n\nconst display_modes = [\n    {\n        screen: 'HDMI-0',\n        sound: {\n            card: 'HDA ATI HDMI',\n            output: 'hdmi-stereo'\n        }\n    },\n    {\n        screen: 'DisplayPort-1',\n        sound: {\n            card: 'HDA ATI SB',\n            output: 'iec958-stereo'\n        }\n    },\n];\n\nconst get_screen_conofig = (function() {\n    const display_pattern = /([a-zA-Z]*-\\d) connected (?:primary )?(\\d{0,4}x\\d{0,4})?/\n    const raw_config = execSync('xrandr', { encoding: 'utf-8' });\n\n    const parsed_config = raw_config\n        .split('\\n')\n        .filter(line => line.match(display_pattern))\n        .map(line => {\n            const [full_match, display_name, resolution = null] = line.match(display_pattern);\n            return { display_name, resolution };\n        });\n\n    return function (search) {\n        if (search) {\n            return parsed_config.find(config => config.display_name === search.screen);\n        }\n\n        return parsed_config;\n    }\n\n})();\n\nconst get_sound_config = (function() {\n    const raw_config = execSync('pacmd list-cards', { encoding: 'utf-8' });\n\n    const parsed_config = raw_config\n        .split('index')\n        .map(output => output.replace(/\\t/g, ''))\n        .filter(output => output.match(/name: <(.*)>/))\n        .map(card => {\n            const system_name = card.match(/name: <(.*)>/)[1];\n            const display_name = card.match(/alsa\\.card_name = \"(.*)\"/)[1];\n            const current_profile = card.match(/active profile: <(.*)>/)[1];\n\n            return { system_name, display_name, current_profile }\n        })\n\n    return function(search) {\n        if (search) {\n            return parsed_config.find(config => config.display_name === search.sound.card);\n        }\n\n        return parsed_config\n    }\n\n})();\n\nfunction find_next_config() {\n    const current_config = display_modes.findIndex(mode => {\n        const screen = get_screen_config(mode)\n        const sound_card = get_sound_config(mode)\n\n        return screen.resolution && sound_card.current_profile !== 'off'\n    })\n\n    return display_modes[current_config + 1] || display_modes[0];\n}\n\nfunction disable_all_configs() {\n    display_modes.forEach(config => {\n        const sound_config = get_sound_config(config);\n\n        execSync(`xrandr --output ${config.screen} --off`);\n        execSync(`pactl set-card-profile ${sound_config.system_name} off`);\n\n    })\n}\n\nfunction switch_config() {\n    const next_config = find_next_config();\n    const next_sound_config = get_sound_config(next_config);\n\n    disable_all_configs()\n    execSync(`xrandr --output ${next_config.screen} --auto`)\n    execSync(`pactl set-card-profile ${next_sound_config.system_name} output:${next_config.sound.output}`);\n}\n\nswitch_config();\n",
+					"file": "/home/olie/scripts/switch-displays.js",
+					"file_size": 2792,
+					"file_write_time": 131684771837444263,
+					"settings":
+					{
+						"buffer_size": 2793,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"settings":
+					{
+						"buffer_size": 0,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/olie/.bashrc",
+					"settings":
+					{
+						"buffer_size": 4056,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					}
+				}
+			],
+			"build_system": "",
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 401.0,
+				"last_filter": "pref",
+				"selected_items":
+				[
+					[
+						"pref",
+						"Preferences: Settings"
+					],
+					[
+						"insta",
+						"Package Control: Install Package"
+					],
+					[
+						"pack",
+						"Install Package Control"
+					]
+				],
+				"width": 501.0
+			},
+			"console":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/etc/fstab",
+				"/etc/fonts/local.conf",
+				"/etc/environment",
+				"/home/olie/config",
+				"/etc/systemd/system/kbdrate.service",
+				"/etc/vconsole.conf"
+			],
+			"find":
+			{
+				"height": 0.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"groups":
+			[
+				{
+					"selected": 4,
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 0,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 4,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/home/olie/.config/compton/compton.config",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 453,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										276,
+										276
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 3,
+							"type": "text"
+						},
+						{
+							"buffer": 2,
+							"file": "/home/olie/scripts/switch-displays.js",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 2793,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										375,
+										375
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 2,
+							"type": "text"
+						},
+						{
+							"buffer": 3,
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 0,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage",
+									"translate_tabs_to_spaces": false
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						},
+						{
+							"buffer": 4,
+							"file": "/home/olie/.bashrc",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 4056,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										4056,
+										4056
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
+								},
+								"translation.x": 0.0,
+								"translation.y": 2508.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 0.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": false,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"position": "0,0,0,0,0,1184,0,1918,1061,1920,1080",
+			"project": "",
+			"replace":
+			{
+				"height": 0.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 0,
+			"settings":
+			{
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 1,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+		]
+	}
+}
