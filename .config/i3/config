@@ -6,8 +6,13 @@
 #####################################################################
 #
 bar {
-        status_command i3status
-        tray_output primary
+    status_command i3status
+    tray_output primary
+    font pango:sans 10
+
+    colors {
+        background #222222
+    }
 }
 #
 #####################################################################
@@ -34,7 +39,6 @@ exec_always --no-startup-id     feh --bg-fill ~/.config/wallpapers/japan-park.jp
 default_border                  pixel 2
 default_floating_border         pixel 4
 hide_edge_borders               both
-font pango:                     Sans 12
 #
 #####################################################################
 #                                                                   #
