@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"Babel",
 		"i3 wm",
 		"Package Control",
 		"Theme - Afterglow"

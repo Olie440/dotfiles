@@ -2,11 +2,13 @@
 	"color_scheme": "Packages/Theme - Afterglow/Afterglow-markdown.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "source code pro",
-	"font_size": 12.5,
+	"font_size": 12,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
 	"tabs_medium": true,
 	"theme": "Afterglow-green.sublime-theme",
 	"translate_tabs_to_spaces": true,
