@@ -20,7 +20,7 @@ prompt {
 inputbar {
     background-color: @prompt-background;
     text-color: @prompt-text;
-    padding: 0.6em;
+    padding: 0.75em;
     end: false;
     border: 0px 0px 1px 0px;
     border-color: #222;
@@ -33,7 +33,7 @@ window {
 }
 
 element {
-    padding: 0.2em 0.6em;
+    padding: 0.5em 0.6em;
 }
 
 element selected {
