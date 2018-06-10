@@ -5,15 +5,15 @@
 #                                                                   #
 #####################################################################
 #
-bar {
-    status_command i3status
-    tray_output primary
-    font pango:sans 10
+#bar {
+#    status_command i3status
+#    tray_output primary
+#    font pango:sans 10
 
-    colors {
-        background #222222
-    }
-}
+#    colors {
+#        background #222222
+#    }
+#}
 #
 #####################################################################
 #                                                                   #
@@ -98,6 +98,7 @@ exec_always                     pulseaudio
 exec_always --no-startup-id     compton --config ~/.config/compton/compton.config
 exec_always --no-startup-id     /opt/urserver/urserver-start --no-manager --no-notification
 exec_always --no-startup-id     chromium
+exec_always --no-startup-id     ~/.config/polybar/start.sh
 #
 #####################################################################
 #                                                                   #
