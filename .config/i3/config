@@ -97,7 +97,7 @@ bindsym $mod+Shift+i        exec xprop -id `xdotool getactivewindow` > ~/.xprop
 exec_always                     pulseaudio
 exec_always --no-startup-id     compton --config ~/.config/compton/compton.config
 exec_always --no-startup-id     /opt/urserver/urserver-start --no-manager --no-notification
-exec_always --no-startup-id     $open_app
+exec_always --no-startup-id     chromium
 #
 #####################################################################
 #                                                                   #
