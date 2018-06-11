@@ -26,7 +26,7 @@
 exec_always --no-startup-id     xrandr --output DisplayPort-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-0 --off --output DVI-0 --off --output HDMI-0 --off
 exec_always                     i3-msg workspace "Chrome"
 exec_always --no-startup-id     hsetroot -solid "#AAAAAA"
-exec_always --no-startup-id     feh --bg-fill ~/.config/wallpapers/japan-park.jpg
+exec_always --no-startup-id     feh --bg-fill ~/.config/wallpapers/koi-fishes.jpg
 #
 #####################################################################
 #                                                                   #
@@ -68,17 +68,19 @@ bindsym $mod+Return               exec $open_app
 bindsym $mod+s                    split h; exec $open_app_split;
 bindsym $mod+Shift+s              split v; exec $open_app_split;
 
-bindsym $mod+Ctrl+Left            move left
-bindsym $mod+Ctrl+Down            move down
-bindsym $mod+Ctrl+Up              move up
-bindsym $mod+Ctrl+Right           move right
+bindsym $mod+Shift+Left           move left
+bindsym $mod+Shift+Down           move down
+bindsym $mod+Shift+Up             move up
+bindsym $mod+Shift+Right          move right
+bindsym $mod+Shift+Return         fullscreen toggle
 
-bindsym $mod+Shift+Left           resize grow left $resize; resize shrink right $resize;
-bindsym $mod+Shift+Right          resize grow right $resize; resize shrink left $resize;
+bindsym $mod+Ctrl+Left            resize grow left $resize; resize shrink right $resize;
+bindsym $mod+Ctrl+Right           resize grow right $resize; resize shrink left $resize;
+bindsym $mod+Ctrl+Up              resize grow up $resize; resize shrink down $resize;
+bindsym $mod+Ctrl+Down            resize grow down $resize; resize shrink up $resize;
 
 bindsym $mod+Ctrl+Shift+Left      move workspace prev; workspace prev
 bindsym $mod+Ctrl+Shift+Right     move workspace next; workspace next
-bindsym $mod+Shift+Return         fullscreen toggle
 bindsym $mod+Left                 workspace prev
 bindsym $mod+Right                workspace next
 
