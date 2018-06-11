@@ -60,34 +60,36 @@ client.background               #AAAAAA
 #                                                                   #
 #####################################################################
 #
-#       <keys>              <command>
+#       <keys>                    <command>
 #
-bindsym $mod+q              kill
-bindsym $mod+Return         exec $open_app
+bindsym $mod+q                    kill
+bindsym $mod+Return               exec $open_app
 
-bindsym $mod+s              split h; exec $open_app_split;
-bindsym $mod+Shift+s        split v; exec $open_app_split;
+bindsym $mod+s                    split h; exec $open_app_split;
+bindsym $mod+Shift+s              split v; exec $open_app_split;
 
-bindsym $mod+Shift+Left     move left
-bindsym $mod+Shift+Down     move down
-bindsym $mod+Shift+Up       move up
-bindsym $mod+Shift+Right    move right
+bindsym $mod+Ctrl+Left            move left
+bindsym $mod+Ctrl+Down            move down
+bindsym $mod+Ctrl+Up              move up
+bindsym $mod+Ctrl+Right           move right
 
-bindsym $mod+Ctrl+Left     resize grow left 5 px or 5 ppt; resize shrink right 5 px or 5 ppt;
-bindsym $mod+Ctrl+Right    resize grow right 5 px or 5 ppt; resize shrink left 5 px or 5 ppt;
+bindsym $mod+Shift+Left           resize grow left $resize; resize shrink right $resize;
+bindsym $mod+Shift+Right          resize grow right $resize; resize shrink left $resize;
 
-bindsym $mod+Shift+Return   fullscreen toggle
-bindsym $mod+Left           workspace prev
-bindsym $mod+Right          workspace next
+bindsym $mod+Ctrl+Shift+Left      move workspace prev; workspace prev
+bindsym $mod+Ctrl+Shift+Right     move workspace next; workspace next
+bindsym $mod+Shift+Return         fullscreen toggle
+bindsym $mod+Left                 workspace prev
+bindsym $mod+Right                workspace next
 
-bindsym $mod+r              exec ~/.xsessionrc; reload
-bindsym $mod+Shift+r        exec ~/.xsessionrc; restart
-bindsym $mod+Shift+q        exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+r                    exec ~/.xsessionrc; reload
+bindsym $mod+Shift+r              exec ~/.xsessionrc; restart
+bindsym $mod+Shift+q              exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-bindsym Print               exec gnome-screenshot -i -d 1
-bindsym $mod+p              exec --no-startup-id node ./scripts/switch-displays.js
+bindsym Print                     exec gnome-screenshot -i -d 1
+bindsym $mod+p                    exec --no-startup-id node ./scripts/switch-displays.js
 
-bindsym $mod+Shift+i        exec xprop -id `xdotool getactivewindow` > ~/.xprop
+bindsym $mod+Shift+i              exec xprop -id `xdotool getactivewindow` > ~/.xprop
 #
 #####################################################################
 #                                                                   #
@@ -112,4 +114,6 @@ exec        --no-startup-id     ~/.config/polybar/start.sh
 set $open_app "rofi -theme .config/rofi/theme.rasi -show drun -lines 9 -run-command 'i3-msg workspace {cmd}; exec {cmd}'"
 set $open_app_split "rofi -theme .config/rofi/theme.rasi -show drun -lines 9"
 set $mod Mod4
+set $resize 10 px or 10 ppt
 floating_modifier $mod
+focus_on_window_activation focus
