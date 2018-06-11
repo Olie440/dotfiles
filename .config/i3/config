@@ -24,7 +24,7 @@
 #           <startup-id>        <command>
 #
 exec_always --no-startup-id     xrandr --output DisplayPort-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-0 --off --output DVI-0 --off --output HDMI-0 --off
-exec_always                     i3-msg workspace "New Window"
+exec_always                     i3-msg workspace "Chrome"
 exec_always --no-startup-id     hsetroot -solid "#AAAAAA"
 exec_always --no-startup-id     feh --bg-fill ~/.config/wallpapers/japan-park.jpg
 #
@@ -73,6 +73,9 @@ bindsym $mod+Shift+Down     move down
 bindsym $mod+Shift+Up       move up
 bindsym $mod+Shift+Right    move right
 
+bindsym $mod+Ctrl+Left     resize grow left 5 px or 5 ppt; resize shrink right 5 px or 5 ppt;
+bindsym $mod+Ctrl+Right    resize grow right 5 px or 5 ppt; resize shrink left 5 px or 5 ppt;
+
 bindsym $mod+Shift+Return   fullscreen toggle
 bindsym $mod+Left           workspace prev
 bindsym $mod+Right          workspace next
@@ -98,7 +101,7 @@ exec_always                     pulseaudio
 exec_always --no-startup-id     compton --config ~/.config/compton/compton.config
 exec_always --no-startup-id     /opt/urserver/urserver-start --no-manager --no-notification
 exec_always --no-startup-id     chromium
-exec_always --no-startup-id     ~/.config/polybar/start.sh
+exec        --no-startup-id     ~/.config/polybar/start.sh
 #
 #####################################################################
 #                                                                   #
