@@ -18,7 +18,7 @@ alert = #bd2c40
 
 [bar/oliebar]
 width = 100%
-height = 30
+height = 32
 fixed-center = false
 
 background = ${colors.background}
@@ -37,9 +37,9 @@ module-margin-left = 2
 module-margin-right = 1
 bottom = true
 
-font-0 = fixed:pixelsize=10;1
+font-0 = ubuntu:pixelsize=11;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-2 = ubuntu:pixelsize=11;1
 
 modules-left = i3
 modules-center =
