@@ -13,6 +13,7 @@ xorg-xrandr
 paper-icon-theme-git
 yadm-git
 nodejs
+npm
 pavucontrol
 noto-fonts-cjk
 noto-fonts-emoji
@@ -25,3 +26,6 @@ nautilus
 xorg-xprop
 adobe-source-code-pro-fonts
 unified-remote-server
+ttf-ubuntu-font-family
+oh-my-zsh
+fzf
