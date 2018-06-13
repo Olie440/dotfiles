@@ -23,10 +23,10 @@
 #
 #           <startup-id>        <command>
 #
-exec_always --no-startup-id     xrandr --output DisplayPort-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-0 --off --output DVI-0 --off --output HDMI-0 --off
-exec_always                     i3-msg workspace "Chrome"
+exec        --no-startup-id     xrandr --output DisplayPort-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-0 --off --output DVI-0 --off --output HDMI-0 --off
+exec                            i3-msg workspace "Chrome"
 exec_always --no-startup-id     hsetroot -solid "#AAAAAA"
-exec_always --no-startup-id     feh --bg-fill ~/.config/wallpapers/koi-fishes.jpg
+exec_always --no-startup-id     feh --bg-fill ~/.config/wallpapers/japan-crossing.jpg
 #
 #####################################################################
 #                                                                   #
@@ -36,9 +36,9 @@ exec_always --no-startup-id     feh --bg-fill ~/.config/wallpapers/koi-fishes.jp
 #
 #                               <value>
 #
-default_border                  pixel 2
-default_floating_border         pixel 4
 hide_edge_borders               both
+for_window [tiling]             border pixel 2
+for_window [floating]           border pixel 3
 #
 #####################################################################
 #                                                                   #
@@ -52,7 +52,6 @@ client.focused          #0D0D0D #666666 #ffffff #dddddd
 client.focused_inactive #000000 #666666 #888888 #292d2e
 client.unfocused        #0D0D0D #666666 #888888 #292d2e
 client.urgent           #2f343a #666666 #ffffff #900000
-client.background               #AAAAAA
 #
 #####################################################################
 #                                                                   #
@@ -74,18 +73,17 @@ bindsym $mod+Shift+Up             move up
 bindsym $mod+Shift+Right          move right
 bindsym $mod+Shift+Return         fullscreen toggle
 
-bindsym $mod+Ctrl+Left            resize grow left $resize; resize shrink right $resize;
-bindsym $mod+Ctrl+Right           resize grow right $resize; resize shrink left $resize;
-bindsym $mod+Ctrl+Up              resize grow up $resize; resize shrink down $resize;
-bindsym $mod+Ctrl+Down            resize grow down $resize; resize shrink up $resize;
+bindsym $mod+Mod1+Left            resize grow left $resize; resize shrink right $resize;
+bindsym $mod+Mod1+Right           resize grow right $resize; resize shrink left $resize;
+bindsym $mod+Mod1+Up              resize grow up $resize; resize shrink down $resize;
+bindsym $mod+Mod1+Down            resize grow down $resize; resize shrink up $resize;
 
 bindsym $mod+Ctrl+Shift+Left      move workspace prev; workspace prev
 bindsym $mod+Ctrl+Shift+Right     move workspace next; workspace next
 bindsym $mod+Left                 workspace prev
 bindsym $mod+Right                workspace next
 
-bindsym $mod+r                    exec ~/.xsessionrc; reload
-bindsym $mod+Shift+r              exec ~/.xsessionrc; restart
+bindsym $mod+r                    exec ~/.xsessionrc; restart
 bindsym $mod+Shift+q              exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym Print                     exec gnome-screenshot -i -d 1
@@ -101,10 +99,10 @@ bindsym $mod+Shift+i              exec xprop -id `xdotool getactivewindow` > ~/.
 #
 #           <startup-id>        <command>
 #
-exec_always                     pulseaudio
-exec_always --no-startup-id     compton --config ~/.config/compton/compton.config
-exec_always --no-startup-id     /opt/urserver/urserver-start --no-manager --no-notification
-exec_always --no-startup-id     chromium
+exec                            pulseaudio
+exec        --no-startup-id     compton --config ~/.config/compton/compton.config
+exec        --no-startup-id     /opt/urserver/urserver-start --no-manager --no-notification
+exec        --no-startup-id     chromium
 exec        --no-startup-id     ~/.config/polybar/start.sh
 #
 #####################################################################
