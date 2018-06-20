@@ -4,7 +4,6 @@ chromium
 wine-staging
 compton
 numix-gtk-theme
-gnome-tweek-tool
 lxappearance
 htop
 winetricks
@@ -30,3 +29,8 @@ ttf-ubuntu-font-family
 oh-my-zsh
 fzf
 gpmdp
+mupdfc
+GPicView
+youtube-dl
+aur/skypeforlinux-stable-bin
+aur/whatsapp-web-desktop
