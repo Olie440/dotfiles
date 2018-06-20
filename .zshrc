@@ -93,3 +93,7 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias install="sudo pacman -S"
+alias aur-install="yaourt -s"
+alias update="yaourt -Syua"
+alias remove="sudo pacman -Rcns"
