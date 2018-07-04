@@ -6,9 +6,11 @@
 	"installed_packages":
 	[
 		"Babel",
+		"Gitignore",
 		"i3 wm",
 		"Package Control",
 		"Theme - Afterglow",
+		"TypeScript",
 		"ZSH"
 	]
 }
