@@ -34,3 +34,4 @@ GPicView
 youtube-dl
 aur/skypeforlinux-stable-bin
 aur/whatsapp-web-desktop
+mate-polkit
