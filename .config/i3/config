@@ -26,7 +26,7 @@
 exec        --no-startup-id     xrandr --output DisplayPort-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-0 --off --output DVI-0 --off --output HDMI-0 --off
 exec                            i3-msg workspace "Chrome"
 exec_always --no-startup-id     hsetroot -solid "#AAAAAA"
-exec_always --no-startup-id     feh --bg-fill ~/.config/wallpapers/japan-crossing.jpg
+exec_always --no-startup-id     feh --bg-fill ~/.config/wallpapers/wine-jo.jpg
 #
 #####################################################################
 #                                                                   #
@@ -104,6 +104,7 @@ exec        --no-startup-id     compton --config ~/.config/compton/compton.confi
 exec        --no-startup-id     /opt/urserver/urserver-start --no-manager --no-notification
 exec        --no-startup-id     chromium
 exec        --no-startup-id     ~/.config/polybar/start.sh
+exec        --no-startup-id     /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 #
 #####################################################################
 #                                                                   #
