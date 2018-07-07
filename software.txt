@@ -35,3 +35,4 @@ youtube-dl
 aur/whatsapp-web-desktop
 mate-polkit
 gnome-calculator
+nvm

@@ -97,3 +97,9 @@ alias install="sudo pacman -S"
 alias aur-install="yaourt -s"
 alias update="yaourt -Syua"
 alias remove="sudo pacman -Rcns"
+
+# NVM
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
