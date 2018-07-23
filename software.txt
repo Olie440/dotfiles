@@ -36,3 +36,4 @@ aur/whatsapp-web-desktop
 mate-polkit
 gnome-calculator
 nvm
+ibus-mozc
