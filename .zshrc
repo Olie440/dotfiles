@@ -97,6 +97,7 @@ alias install="sudo pacman -S"
 alias aur-install="yaourt -s"
 alias update="yaourt -Syua"
 alias remove="sudo pacman -Rcns"
+alias subl="/usr/bin/subl -a"
 
 # NVM
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
