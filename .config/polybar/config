@@ -43,9 +43,9 @@ font-2 = ubuntu:pixelsize=11;1
 
 modules-left = i3
 modules-center =
-modules-right = filesystem xkeyboard memory cpu eth date powermenu
+modules-right = filesystem memory cpu date
 
-tray-position = right
+tray-position =
 tray-padding = 2
 
 cursor-click = pointer
