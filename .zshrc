@@ -95,7 +95,7 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias install="sudo pacman -S"
 alias aur-install="yaourt -s"
-alias update="yaourt -Syua"
+alias update="yaourt -Syua --noconfirm"
 alias remove="sudo pacman -Rcns"
 alias subl="/usr/bin/subl -a"
 
