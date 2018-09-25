@@ -100,6 +100,11 @@ bindsym Print                     exec gnome-screenshot -i -d 1
 bindsym $mod+p                    exec --no-startup-id node ./scripts/switch-displays.js
 
 bindsym $mod+Shift+i              exec xprop -id `xdotool getactivewindow` > ~/.xprop
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ #increase sound volume
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- #decrease sound volume
+bindsym XF86AudioMute exec amixer set Master toggle # mute sound
 #
 #####################################################################
 #                                                                   #
