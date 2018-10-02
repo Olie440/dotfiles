@@ -46,8 +46,8 @@ modules-center =
 modules-right = pulseaudio date
 
 tray-position = right
-tray-padding = 2
-tray-offset-x = -155
+tray-padding = 0
+tray-offset-x = -150
 tray-detached = true
 
 cursor-click = pointer
