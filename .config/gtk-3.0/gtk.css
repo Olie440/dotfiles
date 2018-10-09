@@ -1,0 +1,15 @@
+.nautilus-window .path-bar-box {
+    border-radius: 2px;
+}
+
+.nautilus-window .path-bar > box > button {
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 0;
+    margin: 0 2px;
+    padding: 1px;
+}
+
+.nautilus-window .path-bar > box > button:hover {
+    box-shadow: 0 -3px rgb(99, 99, 200) inset;
+}
