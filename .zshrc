@@ -98,6 +98,8 @@ alias aur-install="yaourt -s"
 alias update="yaourt -Syua --noconfirm"
 alias remove="sudo pacman -Rcns"
 alias subl="/usr/bin/subl -a"
+alias headphones="pactl set-card-profile alsa_card.usb-0a12_Avantree_Leaf-00 output:analog-stereo && pactl set-card-profile alsa_card.pci-0000_00_14.2 off"
+alias speakers="pactl set-card-profile alsa_card.pci-0000_00_14.2 output:iec958-stereo && pactl set-card-profile alsa_card.usb-0a12_Avantree_Leaf-00 off"
 
 # NVM
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
