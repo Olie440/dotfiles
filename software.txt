@@ -38,3 +38,4 @@ yadm-git
 yay
 youtube-dl
 zenity
+gedit
