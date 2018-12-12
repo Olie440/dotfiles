@@ -39,3 +39,4 @@ yay
 youtube-dl
 zenity
 gedit
+redshift

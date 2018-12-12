@@ -121,7 +121,7 @@ exec        --no-startup-id     i3-msg 'workspace 1; rename workspace 1 to "1: F
 exec        --no-startup-id     firefox
 exec        --no-startup-id     ~/.config/polybar/start.sh
 exec        --no-startup-id     /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
-
+exec        --no-startup-id     redshift
 #
 #####################################################################
 #                                                                   #
