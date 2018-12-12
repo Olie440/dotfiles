@@ -40,3 +40,4 @@ youtube-dl
 zenity
 gedit
 redshift
+adobe-base-14-fonts
