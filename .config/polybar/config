@@ -37,9 +37,7 @@ module-margin-left = 2
 module-margin-right = 1
 bottom = true
 
-font-0 = ubuntu:pixelsize=11;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = ubuntu:pixelsize=11;1
+font-0 = ubuntu:style=bold:pixelsize=10;2
 
 modules-left = i3
 modules-center = 
@@ -47,7 +45,7 @@ modules-right = pulseaudio date
 
 tray-position = right
 tray-padding = 0
-tray-offset-x = -150
+tray-offset-x = -142
 tray-detached = true
 
 cursor-click = pointer
