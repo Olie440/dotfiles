@@ -41,3 +41,4 @@ redshift
 adobe-base-14-fonts
 ntp
 ttf-emojione
+numlockx

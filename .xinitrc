@@ -6,3 +6,6 @@ cat ~/.config/i3/*.config > ~/.config/i3/config
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
+
+# Numlock
+numlockx
