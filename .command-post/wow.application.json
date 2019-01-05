@@ -1,0 +1,5 @@
+{
+    "name": "World of Warcraft",
+    "command": "wine ~/Games/WoW/Wow.exe",
+    "type": "application"
+}

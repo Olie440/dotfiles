@@ -1,0 +1,6 @@
+{
+    "name": "Calculator",
+    "command": "gnome-calculator",
+    "type": "Application",
+    "floating": true
+}

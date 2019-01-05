@@ -1,0 +1,5 @@
+{
+    "name": "Switch to Speakers",
+    "command": "pactl set-card-profile alsa_card.pci-0000_00_14.2 output:iec958-stereo && pactl set-card-profile alsa_card.usb-0a12_Avantree_Leaf-00 off",
+    "type": "Command"
+}

@@ -1,0 +1,7 @@
+{
+    "rofi": {
+        "cmd": "rofi",
+        "theme": "~/.config/rofi/theme.rasi",
+        "lines": "9"
+    }
+}

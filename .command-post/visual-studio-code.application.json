@@ -1,0 +1,5 @@
+{
+    "name": "Visual Studio Code",
+    "command": "/opt/visual-studio-code/code",
+    "type": "application"
+}

@@ -1,0 +1,5 @@
+{
+    "name": "Transmisson",
+    "command": "transmission-gtk",
+    "type": "Application"
+}

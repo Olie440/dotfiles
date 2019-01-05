@@ -1,0 +1,5 @@
+{
+    "name": "Google Play Music",
+    "command": "gpmdp",
+    "type": "application"
+}

@@ -1,0 +1,5 @@
+{
+    "name": "Files",
+    "command": "nautilus -w",
+    "type": "application"
+}

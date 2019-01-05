@@ -1,0 +1,5 @@
+{
+    "name": "Shutdown",
+    "command": "shutdown now",
+    "type": "Command"
+}

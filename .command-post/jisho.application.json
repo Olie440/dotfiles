@@ -1,0 +1,6 @@
+{
+    "name": "Jisho",
+    "command": "chromium --profile-directory=Default --app-id=bcmfklecpgmbcjepakakahjoppimeecc",
+    "type": "Application",
+    "floating": true
+}

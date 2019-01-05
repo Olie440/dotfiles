@@ -1,0 +1,5 @@
+{
+    "name": "Terminal",
+    "command": "gnome-terminal",
+    "type": "application"
+}
