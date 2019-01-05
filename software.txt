@@ -1,6 +1,5 @@
 adobe-source-code-pro-fonts
 anki
-aur/whatsapp-web-desktop
 chromium
 compton
 fzf
@@ -17,7 +16,6 @@ nautilus
 nodejs
 noto-fonts
 noto-fonts-cjk
-noto-fonts-emoji
 npm
 numix-gtk-theme
 nvm
@@ -41,3 +39,5 @@ zenity
 gedit
 redshift
 adobe-base-14-fonts
+ntp
+ttf-emojione
