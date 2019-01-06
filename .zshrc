@@ -63,7 +63,8 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source /etc/profile.d/fzf.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 # User configuration
 
