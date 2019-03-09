@@ -2,7 +2,7 @@
     "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.formatOnPaste": true,
-    "window.menuBarVisibility": "hidden",
+    "window.menuBarVisibility": "toggle",
     "window.titleBarStyle": "native",
     "workbench.colorTheme": "Afterglow",
     "editor.acceptSuggestionOnEnter": "smart",
@@ -12,5 +12,11 @@
         100
     ],
     "editor.fontFamily": "'Ubuntu Mono'",
-    "editor.fontSize": 16
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "search.useGlobalIgnoreFiles": true,
+    "files.insertFinalNewline": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.suggest.localityBonus": true,
+    "window.zoomLevel": 0.5
 }

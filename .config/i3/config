@@ -18,7 +18,7 @@ set $resize 10 px or 5 ppt
 #
 #
 #
-exec            --no-startup-id     xrandr --output DisplayPort-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-A-0 --off
+exec            --no-startup-id     xrandr --output DisplayPort-1 --primary --mode 3840x2160--pos 0x0 --rotate normal --output HDMI-A-0 --off
 exec            --no-startup-id     i3-msg 'workspace 1; rename workspace 1 to "New Workspace"'
 exec_always     --no-startup-id     hsetroot -solid "#AAAAAA"
 exec_always     --no-startup-id     feh --bg-fill ~/.config/wallpapers/hunnie.jpg
@@ -33,9 +33,9 @@ exec_always     --no-startup-id     feh --bg-fill ~/.config/wallpapers/hunnie.jp
 #                                   <value>
 #
 hide_edge_borders                   both
-for_window [tiling]                 border pixel 2
-for_window [floating]               border pixel 3
-for_window [window_role="pop-up"]   border pixel 4
+for_window [tiling]                 border pixel 1
+for_window [floating]               border pixel 2
+for_window [window_role="pop-up"]   border pixel 2
 #
 #####################################################################
 #                                                                   #

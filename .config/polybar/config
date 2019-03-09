@@ -8,8 +8,8 @@
 ;=====================================================
 
 [colors]
-background = #222
-background-alt = #444
+background = #333
+background-alt = #555
 foreground = #dfdfdf
 foreground-alt = #555
 primary = #ffb52a
@@ -18,13 +18,13 @@ alert = #bd2c40
 
 [bar/oliebar]
 width = 100%
-height = 32
+height = 60
 fixed-center = true
-dpi=96
+dpi=163
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 5
 line-color = #f00
 
 border-size = 0
@@ -37,15 +37,15 @@ module-margin-left = 2
 module-margin-right = 1
 bottom = true
 
-font-0 = ubuntu:style=bold:pixelsize=11;1.5
+font-0 = ubuntu:style=bold:pixelsize=12;3
 
 modules-left = i3
-modules-center = 
+modules-center =
 modules-right = pulseaudio date
 
 tray-position = right
 tray-padding = 0
-tray-offset-x = -150
+tray-offset-x = -285
 tray-detached = true
 
 cursor-click = pointer

@@ -1,5 +1,0 @@
-{
-    "name": "Chrome",
-    "command": "chromium",
-    "type": "application"
-}

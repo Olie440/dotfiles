@@ -1,5 +1,0 @@
-{
-    "name": "Chrome Incognito",
-    "command": "chromium --incognito",
-    "type": "Application"
-}

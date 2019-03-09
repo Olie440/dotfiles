@@ -1,5 +1,5 @@
 {
     "name": "Files",
-    "command": "nautilus -w",
+    "command": "GDK_DPI_SCALE=0.55 GDK_SCALE=2 nautilus -w",
     "type": "application"
 }
