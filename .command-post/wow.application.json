@@ -1,5 +1,5 @@
 {
     "name": "World of Warcraft",
-    "command": "wine ~/Games/WoW/Wow.exe",
+    "command": "wine ~/Games/WoW/_retail_/Wow.exe",
     "type": "application"
 }
