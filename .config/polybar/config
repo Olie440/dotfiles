@@ -20,7 +20,7 @@ alert = #bd2c40
 width = 100%
 height = 60
 fixed-center = true
-dpi=163
+dpi=168
 background = ${colors.background}
 foreground = ${colors.foreground}
 
@@ -37,7 +37,7 @@ module-margin-left = 2
 module-margin-right = 1
 bottom = true
 
-font-0 = ubuntu:style=bold:pixelsize=12;3
+font-0 = ubuntu:style=bold:pixelsize=11;3
 
 modules-left = i3
 modules-center =
