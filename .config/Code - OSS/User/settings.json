@@ -18,5 +18,12 @@
     "files.insertFinalNewline": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "editor.suggest.localityBonus": true,
-    "window.zoomLevel": 0.5
+    "window.zoomLevel": 0.1,
+    "javascript.suggest.autoImports": false,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "eslint.autoFixOnSave": true,
+    "vetur.format.defaultFormatter.html": "prettier",
+    "editor.formatOnSave": true,
+    "workbench.tree.indent": 20,
+    "workbench.tree.renderIndentGuides": "always"
 }
