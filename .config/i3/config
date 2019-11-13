@@ -21,7 +21,7 @@ set $resize 10 px or 5 ppt
 exec            --no-startup-id     xrandr --output DisplayPort-1 --primary --mode 3840x2160--pos 0x0 --rotate normal --output HDMI-A-0 --off
 exec            --no-startup-id     i3-msg 'workspace 1; rename workspace 1 to "New Workspace"'
 exec_always     --no-startup-id     hsetroot -solid "#AAAAAA"
-exec_always     --no-startup-id     feh --bg-fill ~/.config/wallpapers/hunnie.jpg
+exec_always     --no-startup-id     ~/Development/animated-wallpaper.sh ~/.config/wallpapers/japan-animated-city.gif
 
 #
 #####################################################################
@@ -72,6 +72,7 @@ focus_on_window_activation focus
 #
 bindsym $mod+q                    kill
 bindsym $mod+Return               exec $command_post application-launcher
+bindsym $mod+Space               exec $command_post application-launcher
 
 bindsym $mod+s                    exec $command_post split-horizontal
 bindsym $mod+Shift+s              exec $command_post split-vertical
@@ -96,7 +97,7 @@ bindsym $mod+r                    exec ~/.config/i3/build-config.sh; restart
 bindsym $mod+Shift+q              exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym Print                     exec gnome-screenshot -i -d 1
-bindsym $mod+p                    exec --no-startup-id node ./scripts/switch-displays.js
+bindsym $mod+m                    exec --no-startup-id node ./scripts/switch-displays.js
 
 bindsym $mod+Shift+i              exec xprop -id `xdotool getactivewindow` > ~/.xprop
 
@@ -104,6 +105,13 @@ bindsym $mod+Shift+i              exec xprop -id `xdotool getactivewindow` > ~/.
 bindsym XF86AudioRaiseVolume      exec amixer -D pulse sset Master 5%+ #increase sound volume
 bindsym XF86AudioLowerVolume      exec amixer -D pulse sset Master 5%- #decrease sound volume
 bindsym XF86AudioMute             exec amixer set Master toggle # mute sound
+bindsym XF86AudioPlay             exec playerctl play-pause
+bindsym XF86AudioPause            exec playerctl play-pause
+bindsym XF86AudioNext             exec playerctl next
+bindsym XF86AudioPrev             exec playerctl previous
+bindsym f11                       exec playerctl play-pause
+bindsym f9                        exec playerctl next
+bindsym f12                       exec playerctl previous
 
 # Floating modifier
 floating_modifier $mod
