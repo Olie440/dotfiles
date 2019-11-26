@@ -1,0 +1,10 @@
+[Unit]
+Description=Update System
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/yaourt -Syua --noconfirm
+
+[Install]
+WantedBy=default.target
